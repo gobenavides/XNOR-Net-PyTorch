@@ -12,6 +12,9 @@ from torchvision import datasets, transforms
 from torch.autograd import Variable
 
 import util
+import time
+
+t = time.time()
 
 def save_state(model, acc):
     print('==> Saving model ...')
@@ -190,3 +193,6 @@ if __name__=='__main__':
         adjust_learning_rate(optimizer, epoch)
         train(epoch)
         test()
+
+elapsed = time.time() - t
+print('Elapsed: %s' % elapsed)
