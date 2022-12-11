@@ -113,7 +113,7 @@ if __name__=='__main__':
             help='random seed (default: 1)')
     parser.add_argument('--log-interval', type=int, default=100, metavar='N',
             help='how many batches to wait before logging training status')
-    parser.add_argument('--arch', action='store', default='MyMNIST',
+    parser.add_argument('--arch', action='store', default='MyMNIST', #LeNet_5 or MyMNIST
             help='the MNIST network structure: MyMNIST')
     parser.add_argument('--pretrained', action='store', default=None,
             help='pretrained model')

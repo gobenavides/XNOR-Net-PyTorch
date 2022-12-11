@@ -108,10 +108,11 @@ class LeNet_5(nn.Module):
 class MyMNIST(nn.Module):
     def __init__(self):
         super(MyMNIST, self).__init__()
+        
         self.AUX1 = BinConv2d(1, 32, kernel_size=5, stride=1,padding=0)
-        self.AUX2 = BinConv2d(32*24*24, 10, Linear=True,
+        self.AUX2 = BinConv2d(32*24*24, 32, Linear=True,
                 previous_conv=True, size=24*24)
-        self.AUX3 = nn.Linear(10, 10)
+        self.AUX3 = nn.Linear(32, 10)
 
         for m in self.modules():
             if isinstance(m, nn.BatchNorm2d) or isinstance(m, nn.BatchNorm1d):
